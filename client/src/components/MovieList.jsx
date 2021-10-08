@@ -1,13 +1,13 @@
 import React from 'react'
 import Movie from './Movie.jsx'
 
-var MovieList = (props) => {
+let MovieList = (props) => {
   if (props.list.length > 0) {
     return (
-      <div>
+      <div className='movie-list'>
         <ul>
-        {props.list.map((item, index) =>
-          <Movie item={item} key={index}/>
+        {props.list.map(item =>
+          <Movie item={item} key={item.title} handleWatched={props.handleWatched}/>
         )}
         </ul>
       </div>
